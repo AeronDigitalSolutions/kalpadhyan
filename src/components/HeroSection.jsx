@@ -215,9 +215,9 @@ export default function HeroSection({ onOpenMenu }) {
             {/* Subtle Backlight Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-orange-500/15 to-transparent blur-[60px] rounded-full scale-110 pointer-events-none group-hover:opacity-100 opacity-60 transition-opacity duration-700" />
 
-            {/* Crisp Original HD Kalpadhyan Logo */}
+            {/* Crisp Original HD Kalpadhyan Logo (High-contrast for dark theme) */}
             <img
-              src="/logo.png"
+              src="/logo-white.png"
               alt="Kalpadhyan - Frame the Future"
               className="w-[90%] md:w-[75%] max-w-[820px] h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] transition-transform duration-500 group-hover:scale-[1.02]"
             />

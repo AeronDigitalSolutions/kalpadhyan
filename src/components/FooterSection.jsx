@@ -30,9 +30,9 @@ export default function FooterSection() {
       {/* 2. TRANSLUCENT ALL-WHITE KALPADHYAN LOGO WATERMARK (Replacing INTERIO STUDIOS) */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <img
-          src="/logo.png"
+          src="/logo-white.png"
           alt="Kalpadhyan Watermark"
-          className="w-[85%] max-w-[950px] h-auto object-contain brightness-0 invert opacity-[0.14] select-none filter contrast-150"
+          className="w-[85%] max-w-[950px] h-auto object-contain opacity-[0.14] select-none filter contrast-125"
         />
       </div>
 
