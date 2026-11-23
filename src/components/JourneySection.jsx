@@ -221,11 +221,11 @@ export default function JourneySection() {
                 {/* Soft Architectural Floor Shadow Under the Logo */}
                 <div className="absolute -bottom-3 left-4 right-4 h-8 bg-neutral-900/15 blur-xl rounded-full scale-y-50 pointer-events-none group-hover:opacity-100 opacity-70 transition-opacity" />
 
-                {/* Official Crisp Kalpadhyan Logo Asset */}
+                {/* Sculpted 3D Bronze Kalpadhyan Logo Asset (Exclusive to Journey section) */}
                 <img
-                  src="/logo.png"
+                  src="/journey-logo.png"
                   alt="Kalpadhyan Studio"
-                  className="w-full max-w-xl h-auto object-contain filter contrast-[1.05] drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-[1.01]"
+                  className="w-full max-w-2xl h-auto object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.16)] transition-transform duration-500 group-hover:scale-[1.01]"
                 />
               </motion.div>
             </motion.div>
