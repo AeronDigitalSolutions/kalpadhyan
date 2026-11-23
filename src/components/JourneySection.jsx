@@ -2,11 +2,13 @@ import React, { useRef, useState, useEffect } from 'react'
 import { motion, useSpring, useMotionValue, useTransform, useScroll } from 'framer-motion'
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
+// Words to animate as requested by Aman Gupta
 const TYPEWRITER_PHRASES = [
-  'immersive 3D spaces',
-  'cinematic brand films',
-  'next-gen spatial computing',
-  'interactive AR/VR worlds'
+  'Virtual Spaces',
+  'Creative Solutions',
+  'Immersive Experiences',
+  'Digital Worlds',
+  'Visual Stories'
 ]
 
 export default function JourneySection() {
@@ -62,7 +64,7 @@ export default function JourneySection() {
 
         if (displayText.length + 1 === currentPhrase.length) {
           // Pause at end of completed phrase before deleting
-          setTypingSpeed(2000)
+          setTypingSpeed(2200)
           setIsDeleting(true)
         }
       } else {
@@ -155,7 +157,7 @@ export default function JourneySection() {
                 <span className="font-heading font-bold text-sm text-neutral-950 tracking-wider">KALPADHYAN</span>
               </motion.div>
               <motion.div variants={itemVariants} className="flex items-center justify-between py-2 border-b border-neutral-200/70">
-                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">SPECIALIZATION</span>
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">SPECIALIZATION:</span>
                 <span className="font-heading font-bold text-sm text-cyan-600 tracking-wide">3D / AR / VR / CGI</span>
               </motion.div>
               <motion.div variants={itemVariants} className="flex items-center justify-between py-2 border-b border-neutral-200/70">
@@ -171,7 +173,7 @@ export default function JourneySection() {
             {/* Interactive CTA Button */}
             <motion.div variants={itemVariants} className="pt-2">
               <a
-                href="#partners"
+                href="#services"
                 data-cursor="hover"
                 className="inline-flex items-center space-x-3 px-6 py-3.5 rounded-sm bg-neutral-950 text-white font-mono text-xs tracking-widest uppercase hover:bg-cyan-600 transition-all shadow-md group"
               >
@@ -228,7 +230,7 @@ export default function JourneySection() {
               </motion.div>
             </motion.div>
 
-            {/* The Statement Typography with Infinite Typewriter Feature */}
+            {/* The Statement Typography with Infinite Typewriter Feature (Aman Gupta's Exact Copy) */}
             <motion.div
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -237,24 +239,22 @@ export default function JourneySection() {
               className="max-w-3xl"
             >
               <p className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-neutral-900 leading-[1.3] tracking-[-0.02em]">
-                <span className="block mb-1 sm:mb-2">
-                  Transforms{' '}
-                  <span className="relative inline-block font-medium text-neutral-950 underline decoration-cyan-500 decoration-2 underline-offset-8">
-                    <span className="min-h-[1.2em]">{displayText}</span>
-                    {/* Blinking Editorial Terminal Cursor */}
-                    <motion.span
-                      animate={{ opacity: [1, 0, 1] }}
-                      transition={{ duration: 0.75, repeat: Infinity, ease: 'linear' }}
-                      className="inline-block ml-0.5 font-light text-cyan-600 font-mono"
-                    >
-                      |
-                    </motion.span>
-                  </span>
-                </span>
-                into hyper-real spatial narratives where visionary design meets computational precision and technological mastery.
+                We create{' '}
+                <span className="relative inline-block font-medium text-neutral-950 underline decoration-cyan-500 decoration-2 underline-offset-8">
+                  <span className="min-h-[1.2em]">{displayText}</span>
+                  {/* Blinking Editorial Terminal Cursor */}
+                  <motion.span
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ duration: 0.75, repeat: Infinity, ease: 'linear' }}
+                    className="inline-block ml-0.5 font-light text-cyan-600 font-mono"
+                  >
+                    |
+                  </motion.span>
+                </span>{' '}
+                that transform imagination into reality through design, innovation, and technology.
               </p>
 
-              {/* Architectural Sub-notes (Staggered Entrance) */}
+              {/* 3 Bottom Feature Labels (Aman Gupta's exact specification) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -264,15 +264,17 @@ export default function JourneySection() {
               >
                 <span className="flex items-center space-x-1.5 group cursor-default">
                   <CheckCircle2 size={14} className="text-cyan-600 transition-transform group-hover:scale-110" />
-                  <span className="tracking-wider">SPECIALIZATION: 3D / AR / VR / CGI</span>
+                  <span className="tracking-wider font-semibold">CREATIVE INNOVATION</span>
                 </span>
+                <span className="text-neutral-300 hidden sm:inline">//</span>
                 <span className="flex items-center space-x-1.5 group cursor-default">
                   <CheckCircle2 size={14} className="text-orange-600 transition-transform group-hover:scale-110" />
-                  <span className="tracking-wider">OUR APPROACH: DESIGN × TECHNOLOGY</span>
+                  <span className="tracking-wider font-semibold">IMMERSIVE TECHNOLOGY</span>
                 </span>
+                <span className="text-neutral-300 hidden sm:inline">//</span>
                 <span className="flex items-center space-x-1.5 group cursor-default">
-                  <CheckCircle2 size={14} className="text-neutral-900 transition-transform group-hover:scale-110" />
-                  <span className="tracking-wider font-semibold">STUDIO: KALPADHYAN</span>
+                  <CheckCircle2 size={14} className="text-emerald-600 transition-transform group-hover:scale-110" />
+                  <span className="tracking-wider font-semibold">VISUAL EXCELLENCE</span>
                 </span>
               </motion.div>
             </motion.div>

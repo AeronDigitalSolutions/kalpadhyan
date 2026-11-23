@@ -2,41 +2,42 @@ import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 
+// 5 Service Slides as specified by Aman Gupta
 const SLIDES = [
   {
-    id: 'residential-interior',
-    leftWord: 'Residential',
-    rightWord: 'Interior',
-    video: '/whatwedeliver.mp4',
-    description: 'Timeless, functional homes crafted with exceptional quality for comfortable modern living.'
-  },
-  {
-    id: 'commercial-interior',
-    leftWord: 'Commercial',
-    rightWord: 'Interior',
-    video: '/whatwedeliver2.mp4',
-    description: 'High-impact retail, boutique hospitality, and luxury enterprise spaces engineered for brand distinction.'
-  },
-  {
-    id: 'space-planning',
-    leftWord: 'Space',
-    rightWord: 'Planning',
-    video: '/whatwedeliver3.mp4',
-    description: 'Parametric spatial flow optimizing human circulation, natural ventilation, and biophilic architectural lighting.'
-  },
-  {
-    id: 'architectural-vis',
+    id: 'architectural-visualization',
     leftWord: 'Architectural',
     rightWord: 'Visualization',
-    video: '/whatwedeliver4.mp4',
-    description: 'Photorealistic CGI lighting studies, digital twins, and cinematic walkthroughs before ground is broken.'
+    video: '/whatwedeliver.mp4',
+    description: 'Photorealistic spatial CGI, architectural lighting studies, and hyper-real digital environments.'
   },
   {
-    id: 'turnkey-execution',
-    leftWord: 'Turnkey',
-    rightWord: 'Execution',
+    id: 'ar-vr-experiences',
+    leftWord: 'AR / VR',
+    rightWord: 'Experiences',
+    video: '/whatwedeliver2.mp4',
+    description: 'Real-time spatial computing, Unreal Engine 5 interactive walkthroughs, and immersive spatial hardware.'
+  },
+  {
+    id: 'cgi-advertising',
+    leftWord: 'CGI',
+    rightWord: 'Advertising',
+    video: '/whatwedeliver3.mp4',
+    description: 'Avant-garde commercial campaigns, high-fidelity visual effects, and luxury brand films engineered for impact.'
+  },
+  {
+    id: '3d-animation-filmmaking',
+    leftWord: '3D Animation',
+    rightWord: 'Filmmaking',
+    video: '/whatwedeliver4.mp4',
+    description: 'Cinematic camera flow, dynamic physical simulations, and evocative spatial narratives.'
+  },
+  {
+    id: 'digital-experiences',
+    leftWord: 'Digital',
+    rightWord: 'Experiences',
     video: '/whatwedeliver5.mp4',
-    description: 'Comprehensive end-to-end craft stewardship ensuring absolute material purity from blueprint to handover.'
+    description: 'Next-gen interactive web platforms, creative technology, and multisensory digital worlds.'
   }
 ]
 
@@ -44,25 +45,22 @@ export default function ServicesStackSection() {
   const sectionRef = useRef(null)
 
   // Track overall scroll progress of the entire 5-slide section
-  // 0.0 to 0.8 = Slides 1 to 5 overlapping and stacking
-  // 0.8 to 1.0 = Slide 5 exiting the screen into the Process section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start']
   })
 
   // The single header stays pinned (y: 0) during slides 1 to 5,
-  // and then slides UP smoothly with Slide 5 as it exits!
+  // and then slides UP smoothly with Slide 5 as it exits
   const headerY = useTransform(scrollYProgress, [0.8, 1.0], ['0%', '-130%'])
   const headerOpacity = useTransform(scrollYProgress, [0.8, 0.96], [1, 0])
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-[#050507]">
+    <section id="services" ref={sectionRef} className="relative w-full bg-[#050507]">
       {/* 
         ============================================================
         THE ONE & ONLY HEADER (z-50)
-        - Pinned at top-0 across slides 1, 2, 3, 4, 5 (NO duplicates ever)
-        - When Slide 5 scrolls out, this header slides UP with Slide 5!
+        - Pinned at top-0 across slides 1, 2, 3, 4, 5
         ============================================================
       */}
       <div className="sticky top-0 z-50 h-0 overflow-visible pointer-events-none w-full">
@@ -92,7 +90,6 @@ export default function ServicesStackSection() {
       {/* 
         ============================================================
         5 OVERLAPPING STACKING SLIDES
-        None of the slides contain duplicate headers!
         ============================================================
       */}
       {SLIDES.map((slide, index) => {
@@ -132,16 +129,16 @@ export default function ServicesStackSection() {
                 {/* Horizontal Composition Row */}
                 <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-14">
                   
-                  {/* Left Word (e.g. "Residential", "Commercial", "Space") */}
+                  {/* Left Word (e.g. "Architectural", "AR / VR", "CGI", "3D Animation", "Digital") */}
                   <div className="md:w-1/3 flex justify-center md:justify-end text-center md:text-right">
-                    <h3 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.02em] drop-shadow-xl">
+                    <h3 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.02em] drop-shadow-xl whitespace-nowrap">
                       {slide.leftWord}
                     </h3>
                   </div>
 
                   {/* Center Video Frame with Subtle Hairline Border */}
                   <div
-                    className="relative w-full max-w-[360px] sm:max-w-[440px] md:max-w-[480px] lg:max-w-[520px] aspect-[16/10] rounded-none overflow-hidden border border-white/25 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.85)] group cursor-pointer"
+                    className="relative w-full max-w-[360px] sm:max-w-[440px] md:max-w-[480px] lg:max-w-[520px] aspect-[16/10] rounded-none overflow-hidden border border-white/25 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.85)] group cursor-pointer shrink-0"
                     data-cursor="hover"
                   >
                     <video
@@ -154,9 +151,9 @@ export default function ServicesStackSection() {
                     />
                   </div>
 
-                  {/* Right Word (e.g. "Interior", "Planning", "Visualization") */}
+                  {/* Right Word (e.g. "Visualization", "Experiences", "Advertising", "Filmmaking") */}
                   <div className="md:w-1/3 flex justify-center md:justify-start text-center md:text-left">
-                    <h3 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.02em] drop-shadow-xl">
+                    <h3 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.02em] drop-shadow-xl whitespace-nowrap">
                       {slide.rightWord}
                     </h3>
                   </div>
@@ -174,13 +171,13 @@ export default function ServicesStackSection() {
                   </div>
                 </div>
 
-                {/* On the Last Slide: Premium Architectural Call to Action */}
+                {/* On the Last Slide: Call to Action */}
                 {isLastSlide && (
                   <div className="mt-8 flex items-center justify-center pointer-events-auto">
                     <a
-                      href="#contact"
+                      href="#consultation"
                       data-cursor="hover"
-                      className="inline-flex items-center space-x-3 px-6 py-3 rounded-sm bg-white text-black font-mono text-xs tracking-widest uppercase hover:bg-white/90 transition-all shadow-2xl group"
+                      className="inline-flex items-center space-x-3 px-6 py-3 rounded-sm bg-white text-black font-mono text-xs tracking-widest uppercase hover:bg-cyan-400 hover:text-black transition-all shadow-2xl group"
                     >
                       <span>START A COMMISSION WITH US</span>
                       <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -191,13 +188,13 @@ export default function ServicesStackSection() {
               </div>
             </div>
 
-            {/* 4. BOTTOM BAR: Slide counter & Practice tag */}
+            {/* 4. BOTTOM BAR: Slide counter with EXPERTISE tag */}
             <div className="relative z-20 w-full flex items-center justify-between text-white/40 font-mono text-[10px] md:text-xs">
               <span className="tracking-widest uppercase">
-                PRACTICE 0{index + 1} // 05
+                EXPERTISE 0{index + 1} // 05
               </span>
               <span className="tracking-widest uppercase">
-                KALPADHYAN ARCHITECTURAL STUDIO
+                KALPADHYAN CREATIVE TECHNOLOGY STUDIO
               </span>
             </div>
           </div>
