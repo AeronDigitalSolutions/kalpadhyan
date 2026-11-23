@@ -123,22 +123,22 @@ export default function ServicesStackSection() {
             <div className="relative z-10 w-full h-16 md:h-20" />
 
             {/* 3. CENTER STAGE: LEFT WORD + FLOATING CENTER VIDEO + RIGHT WORD */}
-            <div className="relative z-20 flex-1 flex flex-col items-center justify-center my-auto w-full">
+            <div className="relative z-20 flex-1 flex flex-col items-center justify-center my-auto w-full px-4 sm:px-8 md:px-12">
               <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
                 
-                {/* Horizontal Composition Row */}
-                <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-14">
+                {/* Horizontal Composition Row (Guaranteed never to overflow any screen) */}
+                <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 lg:gap-8">
                   
                   {/* Left Word (e.g. "Architectural", "AR / VR", "CGI", "3D Animation", "Digital") */}
-                  <div className="md:w-1/3 flex justify-center md:justify-end text-center md:text-right">
-                    <h3 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.02em] drop-shadow-xl whitespace-nowrap">
+                  <div className="w-full md:flex-1 flex justify-center md:justify-end text-center md:text-right min-w-0 px-2 sm:px-3">
+                    <h3 className="font-sans text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-normal text-white tracking-[-0.02em] drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] leading-tight select-none">
                       {slide.leftWord}
                     </h3>
                   </div>
 
                   {/* Center Video Frame with Subtle Hairline Border */}
                   <div
-                    className="relative w-full max-w-[360px] sm:max-w-[440px] md:max-w-[480px] lg:max-w-[520px] aspect-[16/10] rounded-none overflow-hidden border border-white/25 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.85)] group cursor-pointer shrink-0"
+                    className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[400px] xl:max-w-[460px] aspect-[16/10] rounded-none overflow-hidden border border-white/25 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.9)] group cursor-pointer shrink-0 my-3 md:my-0"
                     data-cursor="hover"
                   >
                     <video
@@ -152,8 +152,8 @@ export default function ServicesStackSection() {
                   </div>
 
                   {/* Right Word (e.g. "Visualization", "Experiences", "Advertising", "Filmmaking") */}
-                  <div className="md:w-1/3 flex justify-center md:justify-start text-center md:text-left">
-                    <h3 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.02em] drop-shadow-xl whitespace-nowrap">
+                  <div className="w-full md:flex-1 flex justify-center md:justify-start text-center md:text-left min-w-0 px-2 sm:px-3">
+                    <h3 className="font-sans text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-normal text-white tracking-[-0.02em] drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] leading-tight select-none">
                       {slide.rightWord}
                     </h3>
                   </div>
