@@ -3,10 +3,10 @@ import { motion, useSpring, useMotionValue, useTransform, useScroll } from 'fram
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
 const TYPEWRITER_PHRASES = [
-  'elegant interiors',
-  'timeless sanctuaries',
-  'bespoke spaces',
-  'cinematic architecture'
+  'immersive 3D spaces',
+  'cinematic brand films',
+  'next-gen spatial computing',
+  'interactive AR/VR worlds'
 ]
 
 export default function JourneySection() {
@@ -24,7 +24,7 @@ export default function JourneySection() {
   const rightColExitY = useTransform(scrollYProgress, [0.65, 0.95], [0, -75])
   const rightColOpacity = useTransform(scrollYProgress, [0.75, 0.96], [1, 0.15])
 
-  // 2. 3D Parallax Tilt for 3D Wood INTERIO sculpture
+  // 2. 3D Parallax Tilt for 3D Logo sculpture
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
   const smoothMouseX = useSpring(mouseX, { damping: 25, stiffness: 220 })
@@ -137,55 +137,59 @@ export default function JourneySection() {
             viewport={{ once: false, amount: 0.3 }}
             className="lg:col-span-4 flex flex-col justify-between space-y-8"
           >
-            {/* Header & Tagline */}
+            {/* Header & Tagline (Aman Gupta's Specification) */}
             <motion.div variants={itemVariants}>
               <div className="flex items-center space-x-2.5 text-neutral-900 font-heading text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-4">
-                <span className="w-2 h-2 rounded-full bg-neutral-950 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse" />
                 <span>OUR JOURNEY //</span>
               </div>
-              <p className="font-mono text-xs text-neutral-500 tracking-wider uppercase leading-relaxed max-w-xs">
-                Rooted in natural materials, architectural precision, and computational spatial art.
+              <p className="font-mono text-xs text-neutral-700 tracking-wider uppercase leading-relaxed font-semibold">
+                A CREATIVE TECHNOLOGY STUDIO TRANSFORMING IDEAS INTO IMMERSIVE DIGITAL EXPERIENCES.
               </p>
             </motion.div>
 
-            {/* Studio Milestone Metrics (Staggered rows) */}
+            {/* Studio Milestone Metrics (Aman Gupta's specification) */}
             <motion.div variants={itemVariants} className="space-y-4 pt-4 border-t border-neutral-200">
               <motion.div variants={itemVariants} className="flex items-center justify-between py-2 border-b border-neutral-200/70">
-                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">STUDIO FOUNDED</span>
-                <span className="font-heading font-bold text-sm text-neutral-900 tracking-wide">2014 / NEW DELHI</span>
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">STUDIO</span>
+                <span className="font-heading font-bold text-sm text-neutral-950 tracking-wider">KALPADHYAN</span>
               </motion.div>
               <motion.div variants={itemVariants} className="flex items-center justify-between py-2 border-b border-neutral-200/70">
-                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">COMPLETED WORKS</span>
-                <span className="font-heading font-bold text-sm text-neutral-900 tracking-wide">240+ PROJECTS</span>
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">SPECIALIZATION</span>
+                <span className="font-heading font-bold text-sm text-cyan-600 tracking-wide">3D / AR / VR / CGI</span>
               </motion.div>
               <motion.div variants={itemVariants} className="flex items-center justify-between py-2 border-b border-neutral-200/70">
-                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">SPATIAL RIGOR</span>
-                <span className="font-heading font-bold text-sm text-neutral-900 tracking-wide">100% BESPOKE CRAFT</span>
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">OUR APPROACH</span>
+                <span className="font-heading font-bold text-sm text-neutral-950 tracking-wide">DESIGN × TECHNOLOGY</span>
+              </motion.div>
+              <motion.div variants={itemVariants} className="flex items-center justify-between py-2 border-b border-neutral-200/70">
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">TIMELINE</span>
+                <span className="font-mono font-medium text-xs text-neutral-700 tracking-wide">2026 — BEYOND</span>
               </motion.div>
             </motion.div>
 
             {/* Interactive CTA Button */}
             <motion.div variants={itemVariants} className="pt-2">
               <a
-                href="#consultation"
+                href="#partners"
                 data-cursor="hover"
-                className="inline-flex items-center space-x-3 px-6 py-3.5 rounded-sm bg-neutral-950 text-white font-mono text-xs tracking-widest uppercase hover:bg-neutral-800 transition-all shadow-md group"
+                className="inline-flex items-center space-x-3 px-6 py-3.5 rounded-sm bg-neutral-950 text-white font-mono text-xs tracking-widest uppercase hover:bg-cyan-600 transition-all shadow-md group"
               >
-                <span>EXPLORE STUDIO HERITAGE</span>
+                <span>EXPLORE CAPABILITIES</span>
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </motion.div>
           </motion.div>
 
           {/* ========================================================
-              RIGHT COLUMN: 3D WOOD SCULPTURE + TYPEWRITER STATEMENT
+              RIGHT COLUMN: 3D BRAND SCULPTURE + TYPEWRITER STATEMENT
              ======================================================== */}
           <motion.div
             style={{ y: rightColExitY, opacity: rightColOpacity }}
             className="lg:col-span-8 flex flex-col space-y-8 lg:space-y-12"
           >
             
-            {/* 3D Wooden INTERIO Sculpture with Parallax & Soft Gallery Shadow */}
+            {/* 3D Kalpadhyan Brand Sculpture with Parallax & Soft Gallery Shadow */}
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -204,14 +208,22 @@ export default function JourneySection() {
                 }}
                 className="relative w-full max-w-2xl"
               >
-                {/* Soft Architectural Floor Shadow Under the Wood Letters */}
+                {/* Micro Label */}
+                <div className="flex items-center space-x-2 mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-pulse" />
+                  <span className="font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase font-semibold">
+                    STUDIO // KALPADHYAN
+                  </span>
+                </div>
+
+                {/* Soft Architectural Floor Shadow Under the Logo */}
                 <div className="absolute -bottom-3 left-4 right-4 h-8 bg-neutral-900/15 blur-xl rounded-full scale-y-50 pointer-events-none group-hover:opacity-100 opacity-70 transition-opacity" />
 
-                {/* 3D Wooden INTERIO Asset */}
+                {/* Official Crisp Kalpadhyan Logo Asset */}
                 <img
-                  src="/interio-wood.png"
-                  alt="INTERIO - Sculpted Organic Woodcraft"
-                  className="w-full h-auto object-contain filter contrast-[1.08] brightness-[1.02] drop-shadow-[0_18px_26px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-[1.01]"
+                  src="/logo.png"
+                  alt="Kalpadhyan Studio"
+                  className="w-full max-w-xl h-auto object-contain filter contrast-[1.05] drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-[1.01]"
                 />
               </motion.div>
             </motion.div>
@@ -224,22 +236,22 @@ export default function JourneySection() {
               transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-3xl"
             >
-              <p className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-neutral-900 leading-[1.3] tracking-[-0.02em]">
+              <p className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-neutral-900 leading-[1.3] tracking-[-0.02em]">
                 <span className="block mb-1 sm:mb-2">
-                  Creates{' '}
-                  <span className="relative inline-block font-medium text-neutral-950 underline decoration-neutral-400 decoration-1 underline-offset-8">
+                  Transforms{' '}
+                  <span className="relative inline-block font-medium text-neutral-950 underline decoration-cyan-500 decoration-2 underline-offset-8">
                     <span className="min-h-[1.2em]">{displayText}</span>
                     {/* Blinking Editorial Terminal Cursor */}
                     <motion.span
                       animate={{ opacity: [1, 0, 1] }}
                       transition={{ duration: 0.75, repeat: Infinity, ease: 'linear' }}
-                      className="inline-block ml-0.5 font-light text-orange-600 font-mono"
+                      className="inline-block ml-0.5 font-light text-cyan-600 font-mono"
                     >
                       |
                     </motion.span>
                   </span>
                 </span>
-                that combine timeless design, and everyday functionality, exceptional craftsmanship with lasting quality and excellence.
+                into hyper-real spatial narratives where visionary design meets computational precision and technological mastery.
               </p>
 
               {/* Architectural Sub-notes (Staggered Entrance) */}
@@ -248,19 +260,19 @@ export default function JourneySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.4 }}
                 transition={{ duration: 0.75, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="mt-8 flex flex-wrap items-center gap-6 text-neutral-600 font-mono text-xs"
+                className="mt-8 flex flex-wrap items-center gap-6 text-neutral-700 font-mono text-xs"
               >
                 <span className="flex items-center space-x-1.5 group cursor-default">
-                  <CheckCircle2 size={14} className="text-orange-600 transition-transform group-hover:scale-110" />
-                  <span className="tracking-wider">NATURAL SOLID TIMBER</span>
-                </span>
-                <span className="flex items-center space-x-1.5 group cursor-default">
                   <CheckCircle2 size={14} className="text-cyan-600 transition-transform group-hover:scale-110" />
-                  <span className="tracking-wider">SUSTAINABLY HARVESTED</span>
+                  <span className="tracking-wider">SPECIALIZATION: 3D / AR / VR / CGI</span>
                 </span>
                 <span className="flex items-center space-x-1.5 group cursor-default">
-                  <CheckCircle2 size={14} className="text-amber-600 transition-transform group-hover:scale-110" />
-                  <span className="tracking-wider">PRECISION SPATIAL MILLING</span>
+                  <CheckCircle2 size={14} className="text-orange-600 transition-transform group-hover:scale-110" />
+                  <span className="tracking-wider">OUR APPROACH: DESIGN × TECHNOLOGY</span>
+                </span>
+                <span className="flex items-center space-x-1.5 group cursor-default">
+                  <CheckCircle2 size={14} className="text-neutral-900 transition-transform group-hover:scale-110" />
+                  <span className="tracking-wider font-semibold">STUDIO: KALPADHYAN</span>
                 </span>
               </motion.div>
             </motion.div>
