@@ -156,25 +156,34 @@ export default function HomeRenovationSection() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-        {/* Header Row: HOME RENOVATION // & *(2014 - 2026) */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 mb-8 border-b border-white/[0.12] gap-3">
-          <div className="flex items-center space-x-3">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="font-heading text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-white">
-              HOME RENOVATION //
-            </span>
-            <span className="font-mono text-[10px] tracking-widest text-white/50 uppercase hidden sm:inline">
-              [TRUSTED ARCHITECTURAL PARTNERS]
-            </span>
+        {/* Header Row: CREATIVE TECHNOLOGY // & *(2014 - 2026) */}
+        <div className="flex flex-col pb-6 mb-8 border-b border-white/[0.12] gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center space-x-3">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="font-heading text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-white">
+                CREATIVE TECHNOLOGY //
+              </span>
+              <span className="font-mono text-[10px] tracking-widest text-cyan-400/80 uppercase hidden sm:inline">
+                [IMMERSIVE DIGITAL EXPERIENCES]
+              </span>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <span className="font-mono text-xs md:text-sm tracking-[0.2em] text-white/60 font-medium">
+                *(2014 — 2026)
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] font-mono tracking-wider text-white/80 uppercase border border-white/10">
+                ACTIVE ROSTER
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-center space-x-3">
-            <span className="font-mono text-xs md:text-sm tracking-[0.2em] text-white/60 font-medium">
-              *(2014 — 2026)
-            </span>
-            <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] font-mono tracking-wider text-white/80 uppercase border border-white/10">
-              ACTIVE ROSTER
-            </span>
+          {/* Subheading: KALPADHYAN — WHERE IMAGINATION BECOMES EXPERIENCE */}
+          <div className="flex items-center">
+            <h2 className="font-heading text-base sm:text-xl md:text-2xl font-light tracking-[0.14em] uppercase text-white/90">
+              KALPADHYAN <span className="text-orange-500/80 mx-1.5">—</span> <span className="bg-gradient-to-r from-white via-white/90 to-cyan-400 bg-clip-text text-transparent font-medium">WHERE IMAGINATION BECOMES EXPERIENCE</span>
+            </h2>
           </div>
         </div>
 
