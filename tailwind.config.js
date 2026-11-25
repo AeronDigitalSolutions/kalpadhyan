@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Space Grotesk', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
-        heading: ['Syncopate', 'Space Grotesk', 'sans-serif']
+        sans: ['Nexa', 'Space Grotesk', 'Inter', 'sans-serif'],
+        heading: ['Nexa', 'Syncopate', 'sans-serif'],
+        nexa: ['Nexa', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Nexa', 'monospace'],
       },
       colors: {
         dark: {

@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Nexa Geometric Typography Family */
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/nexa/Nexa-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/nexa/Nexa-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/nexa/Nexa-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/nexa/Nexa-Heavy.woff2') format('woff2');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   * {
     margin: 0;
@@ -13,7 +46,7 @@
     background-color: #050506;
     color: #e2e8f0;
     overflow-x: clip;
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Nexa', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 
